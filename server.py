@@ -35,7 +35,6 @@ def shutdown():
         task.cancel()
 
 if __name__ == "__main__":
-    println("starting")
     loop = asyncio.get_event_loop()
     for sig in (signal.SIGINT, signal.SIGTERM):
         loop.add_signal_handler(sig, shutdown)
